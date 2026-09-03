@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import { SITE } from "@/lib/site";
 
@@ -26,10 +27,9 @@ export default function Footer() {
           <a href="#" className="hover:text-branco">
             Condições e Suporte
           </a>
-          {/* Placeholder: substituir pelo link real quando disponível */}
-          <a href="#" className="hover:text-branco">
+          <Link href="/politica-de-privacidade" className="hover:text-branco">
             Política de Privacidade
-          </a>
+          </Link>
         </nav>
       </Container>
 
