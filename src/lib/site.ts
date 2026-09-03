@@ -78,6 +78,14 @@ export const SERVICES: Service[] = [
   },
 ];
 
+export const BIO_REASONS: string[] = [
+  "Renovação de receitas de uso contínuo",
+  "Análise e explicação de exames",
+  "Ajustes de medicação",
+  "Ansiedade, insônia, dores crônicas ou cansaço persistente",
+  "Entender melhor o que está acontecendo com a própria saúde",
+];
+
 export type FaqItem = {
   question: string;
   answer: string;
