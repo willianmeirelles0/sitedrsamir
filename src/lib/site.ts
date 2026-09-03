@@ -122,6 +122,11 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     text: "Minha experiência no consultório foi excelente. Desde o primeiro contato, fui recebida com atenção e cordialidade. O ambiente é limpo, organizado e transmite muita tranquilidade. O Dr. Samir demonstra profundo conhecimento em acupuntura, explicando cada etapa do tratamento com clareza e cuidado. Já percebi melhora significativa nos meus sintomas e um bem-estar geral. Recomendo fortemente para quem busca um atendimento humanizado e resultados reais.",
   },
+  {
+    name: "Aline Molon",
+    rating: 5,
+    text: "Fiz uma consulta online com o Dr. Samir e foi incrível. Ele me escutou, pediu exames e conseguiu me ajudar em uma questão autoimune que eu tinha havia anos e que nenhum outro médico havia dado a devida atenção. Com medicação e suplementação das vitaminas, hoje tenho outra qualidade de vida por conta dele. Recomendo demais, atendimento humano e centrado no paciente.",
+  },
 ];
 
 export type FaqItem = {

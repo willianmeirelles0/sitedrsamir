@@ -11,9 +11,14 @@ export default function Services() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-wrap justify-center gap-8">
         {SERVICES.map((service) => (
-          <ServiceCard key={service.slug} service={service} />
+          <div
+            key={service.slug}
+            className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.3334rem)]"
+          >
+            <ServiceCard service={service} />
+          </div>
         ))}
       </div>
     </Section>
