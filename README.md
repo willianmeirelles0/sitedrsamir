@@ -42,8 +42,9 @@ cp .env.example .env.local
 | --- | --- |
 | `NEXT_PUBLIC_GA_ID` | ID de medição do Google Analytics (GA4), no formato `G-XXXXXXXXXX`. |
 | `NEXT_PUBLIC_META_PIXEL_ID` | ID do Meta Pixel (Facebook/Instagram Ads). |
+| `NEXT_PUBLIC_BOOKING_URL` | Link da plataforma de agendamento online. Veja a seção [Agendamento online](#agendamento-online-futuro) abaixo. |
 
-Se uma variável não for preenchida, o respectivo script simplesmente não é carregado, sem quebrar o build. Isso significa que o site funciona normalmente em desenvolvimento sem nenhum analytics configurado.
+Se uma variável não for preenchida, o respectivo script/seção simplesmente não é carregado, sem quebrar o build. Isso significa que o site funciona normalmente em desenvolvimento sem nenhuma dessas variáveis configuradas.
 
 ## Deploy no Vercel
 
@@ -98,7 +99,7 @@ src/
     sitemap.ts
   components/
     layout/             # Header, Footer
-    sections/            # Hero, About, Bio, Services, ServiceCard, Testimonials, FAQ
+    sections/            # Hero, About, Bio, Services, ServiceCard, Testimonials, Booking, FAQ
     ui/                   # Button, Card, Container, Section (componentes genéricos)
     analytics/             # GoogleAnalytics, MetaPixel
     WhatsAppButton.tsx      # botão reutilizável que abre o WhatsApp com mensagem pré-definida
@@ -120,6 +121,21 @@ A seção "Onde atendemos" foi removida temporariamente porque o consultório es
 ## Depoimentos
 
 A seção "O que dizem os pacientes" exibe avaliações reais do Google, copiadas manualmente pelo cliente (nome, nota e texto), em `TESTIMONIALS` (`src/lib/site.ts`). Não há integração automática com a API do Google, então novas avaliações precisam ser adicionadas manualmente nesse array. O link "ver todas" aponta para `SITE.googleReviewsUrl`, a ficha do Google Maps do Dr. Samir; `SITE.googleRating` e `SITE.googleReviewCount` controlam o resumo de nota/quantidade exibido no topo da seção.
+
+## Agendamento online (futuro)
+
+O componente `src/components/sections/Booking.tsx` já está pronto no projeto, mas fica invisível (retorna `null`) enquanto a variável `NEXT_PUBLIC_BOOKING_URL` não estiver definida, seguindo o mesmo padrão usado pelo Google Analytics e Meta Pixel. A plataforma de agendamento (Calendly, Cal.com, Doctoralia, etc.) ainda não foi escolhida.
+
+Quando a plataforma for definida, para ativar a seção:
+
+1. Preencha `NEXT_PUBLIC_BOOKING_URL` com o link de agendamento (no `.env.local` e nas variáveis de ambiente da Vercel).
+2. A seção "Agende sua consulta online" passa a aparecer automaticamente entre Depoimentos e Dúvidas, com um botão que abre o link em uma nova aba.
+
+Se a plataforma escolhida oferecer um widget embutido (calendário inline, em vez de um link que abre em outra aba), o componente pode ser ajustado depois para embutir um `<iframe>` ou o script da plataforma, no lugar do botão atual.
+
+## Rodapé, desenvolvido por
+
+O rodapé traz o crédito "Desenvolvido por" com a logo da Andrioli Marketing & Performance (`public/images/amp-logo-white.png`), linkando para o Instagram da agência. A logo original tinha fundo creme com letras em vinho e dourado; foi recortada e convertida para branco com fundo transparente, para contrastar com o verde escuro do rodapé.
 
 ## Regra de conteúdo
 
