@@ -4,7 +4,7 @@ export const SITE = {
   crm: "CRM-MG 83196",
   url: "https://www.drsamirsalles.com.br",
   whatsappNumber: "5531995111530",
-  location: "Atendimento presencial em Ipatinga/MG e também online.",
+  location: "Atendimento presencial em Ipatinga/MG e online para todo o Brasil.",
 } as const;
 
 export const WHATSAPP_MESSAGES = {
