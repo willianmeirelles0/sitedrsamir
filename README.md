@@ -57,26 +57,31 @@ Para atualizações futuras, basta dar push na branch conectada ao projeto na Ve
 
 ## Onde entram as imagens reais
 
-Todas as imagens do site são, por enquanto, placeholders locais em SVG (para que o `next/image` funcione normalmente sem depender de assets externos). Substitua os arquivos abaixo em `public/images/` mantendo os mesmos nomes de arquivo (ou atualize as referências em `src/lib/site.ts` e nos componentes de seção se preferir novos nomes):
+A logo e a foto do médico já são os arquivos reais enviados pelo cliente. As demais imagens ainda são placeholders locais em SVG (para que o `next/image` funcione normalmente sem depender de assets externos). Substitua os arquivos abaixo em `public/images/` mantendo os mesmos nomes de arquivo (ou atualize as referências em `src/lib/site.ts` e nos componentes de seção se preferir novos nomes):
 
-| Arquivo | Onde aparece | Proporção recomendada |
+| Arquivo | Onde aparece | Status |
 | --- | --- | --- |
-| `public/images/doctor.jpg` | Foto do médico na seção Hero (já substituída pela foto real) | 4:5 (retrato) |
-| `public/images/clinic.svg` | Foto do consultório na seção Localização | 4:3 |
-| `public/images/service-consulta-clinica.svg` | Card "Consulta Clínica" | 4:3 |
-| `public/images/service-acupuntura.svg` | Card "Acupuntura" | 4:3 |
-| `public/images/service-implanon.svg` | Card "Implanon" | 4:3 |
-| `public/images/service-emagrecimento.svg` | Card "Protocolo de Emagrecimento" | 4:3 |
-| `public/images/service-domiciliar.svg` | Card "Atendimento Médico Domiciliar" | 4:3 |
-| `public/images/og-image.svg` | Imagem de compartilhamento (Open Graph / Twitter) | 1200x630 |
-
-**Importante sobre a imagem de Open Graph:** alguns serviços (WhatsApp, Facebook, LinkedIn) nem sempre renderizam SVG corretamente em pré-visualizações de link. Antes de divulgar o site, recomenda-se substituir `og-image.svg` por uma versão `.png` ou `.jpg` de 1200x630px e atualizar a referência em `src/app/layout.tsx` (`openGraph.images` e `twitter.images`).
+| `public/images/doctor.jpg` | Foto do médico na seção Hero | Foto real |
+| `public/images/logo-horizontal.png` | Logo completa no Header | Logo real |
+| `public/images/logo-icon-light.png` | Ícone da logo no Footer | Logo real |
+| `public/images/og-image.png` | Imagem de compartilhamento (Open Graph / Twitter) | Logo real |
+| `src/app/icon.png` / `src/app/apple-icon.png` / `src/app/favicon.ico` | Favicon e ícone iOS | Logo real |
+| `public/images/clinic.svg` | Foto do consultório na seção Localização (4:3) | Placeholder |
+| `public/images/service-consulta-clinica.svg` | Card "Consulta Clínica" (4:3) | Placeholder |
+| `public/images/service-acupuntura.svg` | Card "Acupuntura" (4:3) | Placeholder |
+| `public/images/service-implanon.svg` | Card "Implanon" (4:3) | Placeholder |
+| `public/images/service-emagrecimento.svg` | Card "Protocolo de Emagrecimento" (4:3) | Placeholder |
+| `public/images/service-domiciliar.svg` | Card "Atendimento Médico Domiciliar" (4:3) | Placeholder |
 
 ### Logo
 
-O componente `src/components/layout/Logo.tsx` contém um placeholder do símbolo de infinito (dois círculos), desenhado em SVG inline. Quando os arquivos finais da logo forem enviados, basta substituir o conteúdo desse componente por uma tag `<Image>` apontando para o arquivo definitivo (ex: `public/logo.svg` ou `public/logo.png`).
+A logo definitiva (símbolo de infinito com dois círculos) já está aplicada em três formatos, todos recortados a partir dos arquivos enviados pelo cliente:
 
-O favicon e o ícone para iOS (`src/app/icon.tsx` e `src/app/apple-icon.tsx`) também usam esse mesmo placeholder gerado dinamicamente. Após receber a logo definitiva, esses arquivos podem ser trocados por um `favicon.ico` / `icon.png` estático em `src/app/`.
+- `public/images/logo-horizontal.png`: versão completa (ícone + "Dr. Samir Salles" + "Atendimento Clínico" + CRM), em verde escuro, usada no Header sobre fundo claro.
+- `public/images/logo-icon-light.png`: apenas o ícone, em bege, usado no Footer sobre fundo verde escuro.
+- `src/app/icon.png`, `src/app/apple-icon.png` e `src/app/favicon.ico`: ícone bege sobre fundo verde escuro, gerados a partir do mesmo arquivo.
+
+Se o cliente enviar uma versão vetorial (SVG) da logo, é possível trocar os arquivos PNG por SVG diretamente, mantendo os mesmos caminhos.
 
 ## Estrutura do projeto
 
@@ -86,12 +91,13 @@ src/
     layout.tsx        # fontes, metadata (SEO/OG), analytics
     page.tsx           # monta as seções da página única
     globals.css
-    icon.tsx            # favicon gerado (placeholder da logo)
-    apple-icon.tsx
+    icon.png            # favicon (logo real)
+    apple-icon.png      # ícone iOS (logo real)
+    favicon.ico
     robots.ts
     sitemap.ts
   components/
-    layout/             # Header, Footer, Logo
+    layout/             # Header, Footer
     sections/            # Hero, About, Services, ServiceCard, Location, FAQ
     ui/                   # Button, Card, Container, Section (componentes genéricos)
     analytics/             # GoogleAnalytics, MetaPixel
