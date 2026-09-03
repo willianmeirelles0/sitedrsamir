@@ -66,11 +66,11 @@ A logo e a foto do médico já são os arquivos reais enviados pelo cliente. As 
 | `public/images/logo-icon-light.png` | Ícone da logo no Footer | Logo real |
 | `public/images/og-image.png` | Imagem de compartilhamento (Open Graph / Twitter) | Logo real |
 | `src/app/icon.png` / `src/app/apple-icon.png` / `src/app/favicon.ico` | Favicon e ícone iOS | Logo real |
+| `public/images/service-acupuntura.jpg` | Card "Acupuntura" | Foto real |
+| `public/images/service-emagrecimento.jpg` | Card "Protocolo de Emagrecimento" | Foto real |
 | `public/images/clinic.svg` | Foto do consultório na seção Localização (4:3) | Placeholder |
 | `public/images/service-consulta-clinica.svg` | Card "Consulta Clínica" (4:3) | Placeholder |
-| `public/images/service-acupuntura.svg` | Card "Acupuntura" (4:3) | Placeholder |
 | `public/images/service-implanon.svg` | Card "Implanon" (4:3) | Placeholder |
-| `public/images/service-emagrecimento.svg` | Card "Protocolo de Emagrecimento" (4:3) | Placeholder |
 | `public/images/service-domiciliar.svg` | Card "Atendimento Médico Domiciliar" (4:3) | Placeholder |
 
 ### Logo
