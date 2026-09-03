@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Merriweather, Public_Sans } from "next/font/google";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import MetaPixel from "@/components/analytics/MetaPixel";
+import LgpdConsentBanner from "@/components/LgpdConsentBanner";
 import { FAQ_ITEMS, SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -141,6 +142,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
         {children}
+        <LgpdConsentBanner />
         <GoogleAnalytics />
         <MetaPixel />
       </body>

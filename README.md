@@ -97,22 +97,33 @@ src/
     favicon.ico
     robots.ts
     sitemap.ts
+    politica-de-privacidade/
+      page.tsx          # página completa de Política de Privacidade (LGPD)
   components/
     layout/             # Header, Footer
     sections/            # Hero, About, Bio, Services, ServiceCard, Testimonials, Booking, FAQ
     ui/                   # Button, Card, Container, Section (componentes genéricos)
     analytics/             # GoogleAnalytics, MetaPixel
     WhatsAppButton.tsx      # botão reutilizável que abre o WhatsApp com mensagem pré-definida
+    LgpdConsentBanner.tsx   # aviso de cookies/privacidade no primeiro acesso
   lib/
     site.ts               # conteúdo, dados de serviços, FAQ, links de navegação
     whatsapp.ts             # geração de URL do WhatsApp com mensagem codificada
 ```
 
-O uso do App Router (mesmo sendo uma página única) permite adicionar novas rotas no futuro, como `/blog` ou `/politica-de-privacidade`, sem precisar reestruturar o projeto.
+O uso do App Router (mesmo sendo uma página única) permite adicionar novas rotas no futuro, como `/blog`, sem precisar reestruturar o projeto. A `/politica-de-privacidade` já é um exemplo disso em produção.
 
 ## WhatsApp
 
 O número de WhatsApp e as mensagens pré-definidas de cada contexto (Hero, Header, cada serviço, FAQ) ficam centralizados em `src/lib/site.ts`. O componente `WhatsAppButton` monta a URL `https://wa.me/<numero>?text=<mensagem>` com a mensagem já codificada e abre em uma nova aba.
+
+## LGPD e Política de Privacidade
+
+O rodapé linka para uma página completa de Política de Privacidade (`/politica-de-privacidade`), com o texto explicando quais dados o site coleta (navegação via Analytics/Pixel, e o que é compartilhado voluntariamente pelo visitante ao clicar em um botão de WhatsApp), para que servem, com quem são compartilhados e os direitos do titular garantidos pela LGPD.
+
+No primeiro acesso, um aviso fixo (`src/components/LgpdConsentBanner.tsx`) aparece na parte de baixo da tela com um resumo e um botão "Aceitar". Ao aceitar, a escolha fica salva no `localStorage` do navegador (chave `lgpd-consent-accepted`) e o aviso não aparece de novo nas próximas visitas, a não ser que o visitante limpe os dados do navegador. Esse aviso é só informativo, ele não bloqueia nenhum cookie ou script automaticamente; o Google Analytics e o Meta Pixel só carregam se as respectivas variáveis de ambiente estiverem preenchidas, independentemente do aviso ser aceito ou não.
+
+Se o texto da política precisar mudar (novo endereço, nova ferramenta de analytics, etc.), edite diretamente `src/app/politica-de-privacidade/page.tsx` e atualize a constante `LAST_UPDATED` no topo do arquivo.
 
 ## Endereço
 
