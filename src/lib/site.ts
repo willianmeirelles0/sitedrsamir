@@ -54,7 +54,7 @@ export const SERVICES: Service[] = [
     title: "Acupuntura",
     description:
       "Técnica milenar utilizada como recurso complementar ao tratamento clínico, sempre sob indicação médica, em busca do equilíbrio entre corpo e mente.",
-    image: "/images/service-acupuntura.svg",
+    image: "/images/service-acupuntura.jpg",
     whatsappMessage: WHATSAPP_MESSAGES.acupuntura,
   },
   {
@@ -70,7 +70,7 @@ export const SERVICES: Service[] = [
     title: "Protocolo de Emagrecimento",
     description:
       "Acompanhamento médico voltado à saúde metabólica, com foco em resultados reais e sustentáveis. Sem modismos, sem promessas vazias.",
-    image: "/images/service-emagrecimento.svg",
+    image: "/images/service-emagrecimento.jpg",
     whatsappMessage: WHATSAPP_MESSAGES.emagrecimento,
   },
   {
