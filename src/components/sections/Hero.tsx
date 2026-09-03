@@ -6,9 +6,9 @@ import { SITE, WHATSAPP_MESSAGES } from "@/lib/site";
 export default function Hero() {
   return (
     <Section id="inicio" className="bg-branco pt-12 sm:pt-16">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
         <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
-          <h1 className="font-heading text-3xl font-bold leading-tight text-verde-escuro sm:text-4xl">
+          <h1 className="font-heading text-3xl font-bold leading-tight text-verde-escuro sm:text-4xl xl:text-5xl">
             Cuidado médico com
             <br />
             critério e humanidade
