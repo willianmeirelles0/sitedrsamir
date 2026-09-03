@@ -4,11 +4,7 @@ export const SITE = {
   crm: "CRM-MG 83196",
   url: "https://www.drsamirsalles.com.br",
   whatsappNumber: "5531995111530",
-  address: {
-    line1: "Casa Gestar",
-    line2: "Rua Pelotas, 390, Jardim Panorama, Ipatinga/MG",
-    mapsUrl: "https://maps.google.com/?q=Rua+Pelotas,+390,+Jardim+Panorama,+Ipatinga/MG",
-  },
+  location: "Atendimento presencial em Ipatinga/MG e também online.",
 } as const;
 
 export const WHATSAPP_MESSAGES = {
@@ -28,7 +24,6 @@ export type NavLink = {
 export const NAV_LINKS: NavLink[] = [
   { label: "Início", href: "#inicio" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Localização", href: "#localizacao" },
   { label: "Dúvidas", href: "#duvidas" },
 ];
 
@@ -46,7 +41,7 @@ export const SERVICES: Service[] = [
     title: "Consulta Clínica",
     description:
       "Avaliação médica completa, com tempo dedicado ao diagnóstico preciso e à orientação clara. Um cuidado que acompanha o paciente além do consultório.",
-    image: "/images/service-consulta-clinica.svg",
+    image: "/images/service-consulta-clinica.jpg",
     whatsappMessage: WHATSAPP_MESSAGES.consultaClinica,
   },
   {

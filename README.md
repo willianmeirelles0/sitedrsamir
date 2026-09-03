@@ -57,7 +57,7 @@ Para atualizações futuras, basta dar push na branch conectada ao projeto na Ve
 
 ## Onde entram as imagens reais
 
-A logo e a foto do médico já são os arquivos reais enviados pelo cliente. As demais imagens ainda são placeholders locais em SVG (para que o `next/image` funcione normalmente sem depender de assets externos). Substitua os arquivos abaixo em `public/images/` mantendo os mesmos nomes de arquivo (ou atualize as referências em `src/lib/site.ts` e nos componentes de seção se preferir novos nomes):
+Todas as imagens do site já são os arquivos reais enviados pelo cliente (nenhum placeholder restante). Para trocar alguma, basta substituir o arquivo em `public/images/` mantendo o mesmo nome (ou atualizar a referência em `src/lib/site.ts` / no componente de seção, se preferir um novo nome):
 
 | Arquivo | Onde aparece | Status |
 | --- | --- | --- |
@@ -66,12 +66,11 @@ A logo e a foto do médico já são os arquivos reais enviados pelo cliente. As 
 | `public/images/logo-icon-light.png` | Ícone da logo no Footer | Logo real |
 | `public/images/og-image.png` | Imagem de compartilhamento (Open Graph / Twitter) | Logo real |
 | `src/app/icon.png` / `src/app/apple-icon.png` / `src/app/favicon.ico` | Favicon e ícone iOS | Logo real |
+| `public/images/service-consulta-clinica.jpg` | Card "Consulta Clínica" (reaproveita a foto do consultório) | Foto real |
 | `public/images/service-acupuntura.jpg` | Card "Acupuntura" | Foto real |
-| `public/images/service-emagrecimento.jpg` | Card "Protocolo de Emagrecimento" | Foto real |
-| `public/images/clinic.jpg` | Foto do consultório na seção Localização | Foto real (gerada por IA) |
 | `public/images/service-implanon.jpg` | Card "Implanon" | Foto real (gerada por IA) |
+| `public/images/service-emagrecimento.jpg` | Card "Protocolo de Emagrecimento" | Foto real |
 | `public/images/service-domiciliar.jpg` | Card "Atendimento Médico Domiciliar" | Foto real (gerada por IA) |
-| `public/images/service-consulta-clinica.svg` | Card "Consulta Clínica" (4:3) | Placeholder |
 
 ### Logo
 
@@ -98,7 +97,7 @@ src/
     sitemap.ts
   components/
     layout/             # Header, Footer
-    sections/            # Hero, About, Services, ServiceCard, Location, FAQ
+    sections/            # Hero, About, Services, ServiceCard, FAQ
     ui/                   # Button, Card, Container, Section (componentes genéricos)
     analytics/             # GoogleAnalytics, MetaPixel
     WhatsAppButton.tsx      # botão reutilizável que abre o WhatsApp com mensagem pré-definida
@@ -112,6 +111,10 @@ O uso do App Router (mesmo sendo uma página única) permite adicionar novas rot
 ## WhatsApp
 
 O número de WhatsApp e as mensagens pré-definidas de cada contexto (Hero, Header, cada serviço, FAQ) ficam centralizados em `src/lib/site.ts`. O componente `WhatsAppButton` monta a URL `https://wa.me/<numero>?text=<mensagem>` com a mensagem já codificada e abre em uma nova aba.
+
+## Endereço
+
+A seção "Onde atendemos" foi removida temporariamente porque o consultório está mudando de endereço. Enquanto isso, a Hero traz uma linha curta deixando claro que o atendimento é presencial em Ipatinga/MG e também online (texto em `SITE.location`, `src/lib/site.ts`). Quando o novo endereço for definido, é possível recriar uma seção de localização (ela existiu em `src/components/sections/Location.tsx` até ser removida) apontando para o novo endereço.
 
 ## Regra de conteúdo
 

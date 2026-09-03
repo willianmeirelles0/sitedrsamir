@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Section from "@/components/ui/Section";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { WHATSAPP_MESSAGES } from "@/lib/site";
+import { SITE, WHATSAPP_MESSAGES } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -20,6 +20,10 @@ export default function Hero() {
               Entre em Contato
             </WhatsAppButton>
           </div>
+          <p className="mt-4 flex items-center gap-1.5 font-body text-sm text-verde-escuro/60">
+            <PinIcon className="h-4 w-4 shrink-0" />
+            {SITE.location}
+          </p>
         </div>
 
         <div className="order-1 lg:order-2">
@@ -36,5 +40,19 @@ export default function Hero() {
         </div>
       </div>
     </Section>
+  );
+}
+
+function PinIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
+      <path
+        d="M12 21s7-6.5 7-11.5a7 7 0 1 0-14 0C5 14.5 12 21 12 21Z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" strokeWidth="1.7" />
+    </svg>
   );
 }
