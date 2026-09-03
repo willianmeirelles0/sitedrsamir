@@ -5,6 +5,10 @@ export const SITE = {
   url: "https://www.drsamirsalles.com.br",
   whatsappNumber: "5531995111530",
   location: "Atendimento presencial em Ipatinga/MG e online para todo o Brasil.",
+  googleReviewsUrl:
+    "https://www.google.com/maps/place/Dr.+Samir+Salles/@-19.4719978,-42.5997834,13z/data=!4m18!1m9!3m8!1s0x8ddb8f7620338af1:0xf1e038116114140b!2sDr.+Samir+Salles!8m2!3d-19.4720834!4d-42.5585837!9m1!1b1!16s%2Fg%2F11yz9thp9h!3m7!1s0x8ddb8f7620338af1:0xf1e038116114140b!8m2!3d-19.4720834!4d-42.5585837!9m1!1b1!16s%2Fg%2F11yz9thp9h",
+  googleRating: 5,
+  googleReviewCount: 15,
 } as const;
 
 export const WHATSAPP_MESSAGES = {
@@ -84,6 +88,40 @@ export const BIO_REASONS: string[] = [
   "Ajustes de medicação",
   "Ansiedade, insônia, dores crônicas ou cansaço persistente",
   "Entender melhor o que está acontecendo com a própria saúde",
+];
+
+export type Testimonial = {
+  name: string;
+  rating: number;
+  text: string;
+};
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Josilaine Rosa",
+    rating: 5,
+    text: "O Dr. Samir é um profissional excepcional. Desde a primeira consulta, demonstrou uma empatia e atenção que raramente encontramos. Ele explica tudo com muita atenção e clareza, tirando todas as dúvidas. Só tenho a agradecer pelo cuidado humano e dedicação. Super recomendo, excelente.",
+  },
+  {
+    name: "Tiago Ferreira",
+    rating: 5,
+    text: "Fui muito bem atendido pelo Dr. Samir, ele foi extremamente atencioso e transmitiu segurança total durante o atendimento.",
+  },
+  {
+    name: "José Vitoriano da Cunha Filho",
+    rating: 5,
+    text: "Atendimento super especial. Anamnese completa. Consulta sem pressa. Senti-me acolhido e fui ouvido. Fiz acupuntura e gostei muito.",
+  },
+  {
+    name: "Jéssica Costa Ferreira",
+    rating: 5,
+    text: "Tive um dos melhores atendimentos com o Dr. Samir. Coloquei o Implanon e todo o procedimento foi realizado com atenção e de forma humanizada. Indico muito.",
+  },
+  {
+    name: "Gabrielle Oliveira",
+    rating: 5,
+    text: "Minha experiência no consultório foi excelente. Desde o primeiro contato, fui recebida com atenção e cordialidade. O ambiente é limpo, organizado e transmite muita tranquilidade. O Dr. Samir demonstra profundo conhecimento em acupuntura, explicando cada etapa do tratamento com clareza e cuidado. Já percebi melhora significativa nos meus sintomas e um bem-estar geral. Recomendo fortemente para quem busca um atendimento humanizado e resultados reais.",
+  },
 ];
 
 export type FaqItem = {
