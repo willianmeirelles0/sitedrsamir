@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Logo from "@/components/layout/Logo";
+import Image from "next/image";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Container from "@/components/ui/Container";
 import { NAV_LINKS, SITE, WHATSAPP_MESSAGES } from "@/lib/site";
@@ -12,16 +12,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-verde-escuro/10 bg-branco/95 backdrop-blur">
       <Container className="flex h-20 items-center justify-between gap-4">
-        <a href="#inicio" className="flex items-center gap-3 text-verde-escuro">
-          <Logo className="h-8 w-12 shrink-0" />
-          <span className="flex flex-col leading-tight">
-            <span className="font-heading text-base font-bold sm:text-lg">
-              {SITE.name}
-            </span>
-            <span className="font-body text-xs text-verde-escuro/70 sm:text-sm">
-              {SITE.role} · {SITE.crm}
-            </span>
-          </span>
+        <a href="#inicio" className="flex items-center">
+          <Image
+            src="/images/logo-horizontal.png"
+            alt={`${SITE.name}, ${SITE.role}, ${SITE.crm}`}
+            width={1719}
+            height={488}
+            priority
+            className="h-10 w-auto sm:h-12"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">

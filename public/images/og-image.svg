@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Dr. Samir Salles, Atendimento Clinico">
-  <rect width="1200" height="630" fill="#004643"/>
-  <g stroke="#9ac3c1" stroke-width="14" fill="none">
-    <circle cx="560" cy="255" r="46"/>
-    <circle cx="640" cy="255" r="46"/>
-  </g>
-  <text x="600" y="380" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" fill="#ffffff">Dr. Samir Salles</text>
-  <text x="600" y="430" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#ebe2d8">Atendimento Clinico . CRM-MG 83196</text>
-</svg>
