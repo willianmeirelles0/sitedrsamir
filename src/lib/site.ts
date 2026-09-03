@@ -62,7 +62,7 @@ export const SERVICES: Service[] = [
     title: "Implanon",
     description:
       "Método contraceptivo de longa duração, seguro e eficaz, aplicado e acompanhado com todo o rigor médico necessário.",
-    image: "/images/service-implanon.svg",
+    image: "/images/service-implanon.jpg",
     whatsappMessage: WHATSAPP_MESSAGES.implanon,
   },
   {
@@ -78,7 +78,7 @@ export const SERVICES: Service[] = [
     title: "Atendimento Médico Domiciliar",
     description:
       "Cuidado médico humanizado levado até a segurança do lar, pensado para idosos, pessoas com dificuldade de locomoção ou que necessitam de atenção especial. Disponível para Ipatinga e cidades vizinhas.",
-    image: "/images/service-domiciliar.svg",
+    image: "/images/service-domiciliar.jpg",
     whatsappMessage: WHATSAPP_MESSAGES.domiciliar,
   },
 ];

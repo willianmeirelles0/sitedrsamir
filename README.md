@@ -68,10 +68,10 @@ A logo e a foto do médico já são os arquivos reais enviados pelo cliente. As 
 | `src/app/icon.png` / `src/app/apple-icon.png` / `src/app/favicon.ico` | Favicon e ícone iOS | Logo real |
 | `public/images/service-acupuntura.jpg` | Card "Acupuntura" | Foto real |
 | `public/images/service-emagrecimento.jpg` | Card "Protocolo de Emagrecimento" | Foto real |
-| `public/images/clinic.svg` | Foto do consultório na seção Localização (4:3) | Placeholder |
+| `public/images/clinic.jpg` | Foto do consultório na seção Localização | Foto real (gerada por IA) |
+| `public/images/service-implanon.jpg` | Card "Implanon" | Foto real (gerada por IA) |
+| `public/images/service-domiciliar.jpg` | Card "Atendimento Médico Domiciliar" | Foto real (gerada por IA) |
 | `public/images/service-consulta-clinica.svg` | Card "Consulta Clínica" (4:3) | Placeholder |
-| `public/images/service-implanon.svg` | Card "Implanon" (4:3) | Placeholder |
-| `public/images/service-domiciliar.svg` | Card "Atendimento Médico Domiciliar" (4:3) | Placeholder |
 
 ### Logo
 
