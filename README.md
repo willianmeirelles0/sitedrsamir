@@ -98,7 +98,7 @@ src/
     sitemap.ts
   components/
     layout/             # Header, Footer
-    sections/            # Hero, About, Bio, Services, ServiceCard, FAQ
+    sections/            # Hero, About, Bio, Services, ServiceCard, Testimonials, FAQ
     ui/                   # Button, Card, Container, Section (componentes genéricos)
     analytics/             # GoogleAnalytics, MetaPixel
     WhatsAppButton.tsx      # botão reutilizável que abre o WhatsApp com mensagem pré-definida
@@ -116,6 +116,10 @@ O número de WhatsApp e as mensagens pré-definidas de cada contexto (Hero, Head
 ## Endereço
 
 A seção "Onde atendemos" foi removida temporariamente porque o consultório está mudando de endereço. Enquanto isso, a Hero traz uma linha curta deixando claro que o atendimento é presencial em Ipatinga/MG e também online (texto em `SITE.location`, `src/lib/site.ts`). Quando o novo endereço for definido, é possível recriar uma seção de localização (ela existiu em `src/components/sections/Location.tsx` até ser removida) apontando para o novo endereço.
+
+## Depoimentos
+
+A seção "O que dizem os pacientes" exibe avaliações reais do Google, copiadas manualmente pelo cliente (nome, nota e texto), em `TESTIMONIALS` (`src/lib/site.ts`). Não há integração automática com a API do Google, então novas avaliações precisam ser adicionadas manualmente nesse array. O link "ver todas" aponta para `SITE.googleReviewsUrl`, a ficha do Google Maps do Dr. Samir; `SITE.googleRating` e `SITE.googleReviewCount` controlam o resumo de nota/quantidade exibido no topo da seção.
 
 ## Regra de conteúdo
 
