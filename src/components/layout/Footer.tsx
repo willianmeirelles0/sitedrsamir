@@ -32,6 +32,25 @@ export default function Footer() {
           </a>
         </nav>
       </Container>
+
+      <Container className="mt-8 flex items-center justify-center gap-2 border-t border-branco/10 pt-6 font-body text-sm">
+        <span>Desenvolvido por</span>
+        <a
+          href="https://www.instagram.com/andrioli.marketing?igsi=Nzl1d3lwb2V5NWNs"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Andrioli Marketing & Performance no Instagram"
+          className="inline-flex items-center opacity-90 transition-opacity hover:opacity-100"
+        >
+          <Image
+            src="/images/amp-logo-white.png"
+            alt="Andrioli Marketing & Performance"
+            width={1019}
+            height={219}
+            className="h-6 w-auto"
+          />
+        </a>
+      </Container>
     </footer>
   );
 }
