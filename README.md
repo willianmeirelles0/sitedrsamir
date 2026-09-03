@@ -122,6 +122,22 @@ A seção "Onde atendemos" foi removida temporariamente porque o consultório es
 
 A seção "O que dizem os pacientes" exibe avaliações reais do Google, copiadas manualmente pelo cliente (nome, nota e texto), em `TESTIMONIALS` (`src/lib/site.ts`). Não há integração automática com a API do Google, então novas avaliações precisam ser adicionadas manualmente nesse array. O link "ver todas" aponta para `SITE.googleReviewsUrl`, a ficha do Google Maps do Dr. Samir; `SITE.googleRating` e `SITE.googleReviewCount` controlam o resumo de nota/quantidade exibido no topo da seção.
 
+## SEO
+
+Além do básico (metadata, Open Graph, sitemap, robots), o site inclui dados estruturados (JSON-LD) em `src/app/layout.tsx`:
+
+- **Physician**: nome, telefone, área de atendimento (Ipatinga/MG e Brasil, para o online), especialidade, serviços oferecidos e a nota/quantidade de avaliações do Google (`SITE.googleRating` / `SITE.googleReviewCount`, os mesmos valores usados na seção de Depoimentos).
+- **FAQPage**: gerado automaticamente a partir de `FAQ_ITEMS`, então editar as perguntas/respostas ali atualiza o dado estruturado junto com o conteúdo visível.
+
+Título e descrição da página foram escritos para incluir "Ipatinga/MG" e "consulta médica online" de forma natural, já que são os termos de busca mais relevantes para o negócio.
+
+**Importante, isso é trabalho de código, não garante posicionamento sozinho.** Para o Google realmente ranquear bem para "médico Ipatinga" e "consulta online", o que mais pesa é fora do código:
+
+1. Verificar o domínio no [Google Search Console](https://search.google.com/search-console) e enviar o sitemap (`https://www.drsamirsalles.com.br/sitemap.xml`).
+2. Manter o perfil do Google Business (Google Meu Negócio) completo e ativo, ele é o principal fator de ranqueamento local, mais do que o site em si.
+3. Garantir que nome, endereço e telefone sejam idênticos em todo lugar que aparecem (site, Google Business, Doctoralia, redes sociais), quando o novo endereço for definido.
+4. Acumular mais avaliações no Google ao longo do tempo (já estão ótimas: 5,0 com 15 avaliações).
+
 ## Agendamento online (futuro)
 
 O componente `src/components/sections/Booking.tsx` já está pronto no projeto, mas fica invisível (retorna `null`) enquanto a variável `NEXT_PUBLIC_BOOKING_URL` não estiver definida, seguindo o mesmo padrão usado pelo Google Analytics e Meta Pixel. A plataforma de agendamento (Calendly, Cal.com, Doctoralia, etc.) ainda não foi escolhida.

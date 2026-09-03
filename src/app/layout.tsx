@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Merriweather, Public_Sans } from "next/font/google";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import MetaPixel from "@/components/analytics/MetaPixel";
-import { SITE } from "@/lib/site";
+import { FAQ_ITEMS, SITE } from "@/lib/site";
 import "./globals.css";
 
 const merriweather = Merriweather({
@@ -18,9 +18,9 @@ const publicSans = Public_Sans({
   display: "swap",
 });
 
-const title = `${SITE.name} | ${SITE.role}`;
+const title = `${SITE.name}, Médico em Ipatinga/MG e Consulta Online`;
 const description =
-  "Atendimento clínico integrado, acupuntura médica e decisões baseadas em evidência científica, com o Dr. Samir Salles em Ipatinga/MG.";
+  "Consulta médica online e presencial em Ipatinga/MG com o Dr. Samir Salles. Atendimento clínico, acupuntura e decisões baseadas em evidência científica.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -32,10 +32,22 @@ export const metadata: Metadata = {
   keywords: [
     "Dr. Samir Salles",
     "médico Ipatinga",
+    "médico em Ipatinga MG",
+    "clínico geral Ipatinga",
+    "consulta médica online",
+    "consulta médica online Brasil",
+    "telemedicina",
     "acupuntura médica",
+    "acupuntura Ipatinga",
     "consulta clínica",
+    "Implanon Ipatinga",
+    "protocolo de emagrecimento",
     "atendimento domiciliar Ipatinga",
+    "médico online",
   ],
+  alternates: {
+    canonical: SITE.url,
+  },
   openGraph: {
     title,
     description,
@@ -64,6 +76,54 @@ export const metadata: Metadata = {
   },
 };
 
+const physicianJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  name: SITE.name,
+  url: SITE.url,
+  image: `${SITE.url}/images/doctor.jpg`,
+  telephone: `+${SITE.whatsappNumber}`,
+  medicalSpecialty: "PrimaryCare",
+  description,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ipatinga",
+    addressRegion: "MG",
+    addressCountry: "BR",
+  },
+  areaServed: [
+    { "@type": "City", name: "Ipatinga" },
+    { "@type": "State", name: "Minas Gerais" },
+    { "@type": "Country", name: "Brasil" },
+  ],
+  availableService: [
+    { "@type": "MedicalProcedure", name: "Consulta Clínica" },
+    { "@type": "MedicalTherapy", name: "Acupuntura" },
+    { "@type": "MedicalProcedure", name: "Implanon" },
+    { "@type": "MedicalTherapy", name: "Protocolo de Emagrecimento" },
+    { "@type": "MedicalProcedure", name: "Atendimento Médico Domiciliar" },
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: SITE.googleRating,
+    reviewCount: SITE.googleReviewCount,
+  },
+  sameAs: [SITE.googleReviewsUrl],
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -72,6 +132,14 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${merriweather.variable} ${publicSans.variable}`}>
       <body className="font-body antialiased text-verde-escuro bg-branco">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(physicianJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
         {children}
         <GoogleAnalytics />
         <MetaPixel />
