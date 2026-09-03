@@ -62,6 +62,7 @@ Todas as imagens do site já são os arquivos reais enviados pelo cliente (nenhu
 | Arquivo | Onde aparece | Status |
 | --- | --- | --- |
 | `public/images/doctor.jpg` | Foto do médico na seção Hero | Foto real |
+| `public/images/doctor-bio.jpg` | Foto do médico na seção "Sobre o Dr. Samir" | Foto real |
 | `public/images/logo-horizontal.png` | Logo completa no Header | Logo real |
 | `public/images/logo-icon-light.png` | Ícone da logo no Footer | Logo real |
 | `public/images/og-image.png` | Imagem de compartilhamento (Open Graph / Twitter) | Logo real |
@@ -97,7 +98,7 @@ src/
     sitemap.ts
   components/
     layout/             # Header, Footer
-    sections/            # Hero, About, Services, ServiceCard, FAQ
+    sections/            # Hero, About, Bio, Services, ServiceCard, FAQ
     ui/                   # Button, Card, Container, Section (componentes genéricos)
     analytics/             # GoogleAnalytics, MetaPixel
     WhatsAppButton.tsx      # botão reutilizável que abre o WhatsApp com mensagem pré-definida
