@@ -9,7 +9,7 @@ export default function Location() {
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-branco shadow-sm ring-1 ring-verde-escuro/10">
           <Image
-            src="/images/clinic.svg"
+            src="/images/clinic.jpg"
             alt="Foto da Casa Gestar, consultório do Dr. Samir Salles"
             fill
             loading="lazy"
