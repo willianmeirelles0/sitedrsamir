@@ -61,7 +61,7 @@ Todas as imagens do site são, por enquanto, placeholders locais em SVG (para qu
 
 | Arquivo | Onde aparece | Proporção recomendada |
 | --- | --- | --- |
-| `public/images/doctor.svg` | Foto do médico na seção Hero | 4:5 (retrato) |
+| `public/images/doctor.jpg` | Foto do médico na seção Hero (já substituída pela foto real) | 4:5 (retrato) |
 | `public/images/clinic.svg` | Foto do consultório na seção Localização | 4:3 |
 | `public/images/service-consulta-clinica.svg` | Card "Consulta Clínica" | 4:3 |
 | `public/images/service-acupuntura.svg` | Card "Acupuntura" | 4:3 |

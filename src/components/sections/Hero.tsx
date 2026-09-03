@@ -25,12 +25,12 @@ export default function Hero() {
         <div className="order-1 lg:order-2">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl bg-bege shadow-sm ring-1 ring-verde-escuro/10 lg:max-w-none">
             <Image
-              src="/images/doctor.svg"
-              alt="Foto do Dr. Samir Salles"
+              src="/images/doctor.jpg"
+              alt="Dr. Samir Salles"
               fill
               priority
               sizes="(min-width: 1024px) 480px, (min-width: 640px) 384px, 90vw"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
         </div>
