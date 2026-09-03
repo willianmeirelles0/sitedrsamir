@@ -8,8 +8,10 @@ export default function Hero() {
     <Section id="inicio" className="bg-branco pt-12 sm:pt-16">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
-          <h1 className="font-heading text-3xl font-bold leading-tight text-verde-escuro sm:text-4xl lg:text-5xl">
-            Cuidado médico com critério e humanidade
+          <h1 className="font-heading text-3xl font-bold leading-tight text-verde-escuro sm:text-4xl">
+            Cuidado médico com
+            <br />
+            critério e humanidade
           </h1>
           <p className="mt-5 max-w-xl font-body text-base text-verde-escuro/80 sm:text-lg">
             Atendimento clínico integrado, acupuntura médica e decisões baseadas
