@@ -42,9 +42,8 @@ cp .env.example .env.local
 | --- | --- |
 | `NEXT_PUBLIC_GA_ID` | ID de medição do Google Analytics (GA4), no formato `G-XXXXXXXXXX`. |
 | `NEXT_PUBLIC_META_PIXEL_ID` | ID do Meta Pixel (Facebook/Instagram Ads). |
-| `NEXT_PUBLIC_BOOKING_URL` | Link da plataforma de agendamento online. Veja a seção [Agendamento online](#agendamento-online-futuro) abaixo. |
 
-Se uma variável não for preenchida, o respectivo script/seção simplesmente não é carregado, sem quebrar o build. Isso significa que o site funciona normalmente em desenvolvimento sem nenhuma dessas variáveis configuradas.
+Se uma variável não for preenchida, o respectivo script simplesmente não é carregado, sem quebrar o build. Isso significa que o site funciona normalmente em desenvolvimento sem essas variáveis configuradas.
 
 ## Deploy no Vercel
 
@@ -68,10 +67,9 @@ Todas as imagens do site já são os arquivos reais enviados pelo cliente (nenhu
 | `public/images/logo-icon-light.png` | Ícone da logo no Footer | Logo real |
 | `public/images/og-image.png` | Imagem de compartilhamento (Open Graph / Twitter) | Logo real |
 | `src/app/icon.png` / `src/app/apple-icon.png` / `src/app/favicon.ico` | Favicon e ícone iOS | Logo real |
-| `public/images/service-consulta-clinica.jpg` | Card "Consulta Clínica" (reaproveita a foto do consultório) | Foto real |
+| `public/images/service-consulta-clinica.png` | Card "Consulta Clínica" (foto do consultório) | Foto real |
 | `public/images/service-acupuntura.jpg` | Card "Acupuntura" | Foto real |
-| `public/images/service-implanon.jpg` | Card "Implanon" | Foto real (gerada por IA) |
-| `public/images/service-emagrecimento.jpg` | Card "Protocolo de Emagrecimento" | Foto real |
+| `public/images/service-implanon.png` | Card "Implante Contraceptivo Implanon" | Foto real |
 | `public/images/service-domiciliar.jpg` | Card "Atendimento Médico Domiciliar" | Foto real (gerada por IA) |
 
 ### Logo
@@ -149,16 +147,11 @@ Título e descrição da página foram escritos para incluir "Ipatinga/MG" e "co
 3. Garantir que nome, endereço e telefone sejam idênticos em todo lugar que aparecem (site, Google Business, Doctoralia, redes sociais), quando o novo endereço for definido.
 4. Acumular mais avaliações no Google ao longo do tempo (já estão ótimas: 5,0 com 15 avaliações).
 
-## Agendamento online (futuro)
+## Agendamento online
 
-O componente `src/components/sections/Booking.tsx` já está pronto no projeto, mas fica invisível (retorna `null`) enquanto a variável `NEXT_PUBLIC_BOOKING_URL` não estiver definida, seguindo o mesmo padrão usado pelo Google Analytics e Meta Pixel. A plataforma de agendamento (Calendly, Cal.com, Doctoralia, etc.) ainda não foi escolhida.
+A seção "Agende sua consulta online" (`src/components/sections/Booking.tsx`, entre Depoimentos e Dúvidas) embute o widget de agendamento do Doctoralia (plataforma `docplanner`), carregado via `next/script` a partir de `https://platform.docplanner.com/js/widget.js`. O widget lê o perfil pelo atributo `data-zlw-doctor="samir-salles"` na tag `<a id="zl-url">` e substitui esse link por um calendário embutido assim que o script carrega.
 
-Quando a plataforma for definida, para ativar a seção:
-
-1. Preencha `NEXT_PUBLIC_BOOKING_URL` com o link de agendamento (no `.env.local` e nas variáveis de ambiente da Vercel).
-2. A seção "Agende sua consulta online" passa a aparecer automaticamente entre Depoimentos e Dúvidas, com um botão que abre o link em uma nova aba.
-
-Se a plataforma escolhida oferecer um widget embutido (calendário inline, em vez de um link que abre em outra aba), o componente pode ser ajustado depois para embutir um `<iframe>` ou o script da plataforma, no lugar do botão atual.
+Para trocar de médico/perfil no Doctoralia (ex: URL ou usuário mudar), atualize `DOCTORALIA_URL` e o atributo `data-zlw-doctor` em `Booking.tsx` com os novos valores fornecidos pelo painel do Doctoralia.
 
 ## Rodapé, desenvolvido por
 
