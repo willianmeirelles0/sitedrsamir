@@ -42,7 +42,6 @@ export const metadata: Metadata = {
     "acupuntura Ipatinga",
     "consulta clínica",
     "Implanon Ipatinga",
-    "protocolo de emagrecimento",
     "atendimento domiciliar Ipatinga",
     "médico online",
   ],
@@ -101,7 +100,6 @@ const physicianJsonLd = {
     { "@type": "MedicalProcedure", name: "Consulta Clínica" },
     { "@type": "MedicalTherapy", name: "Acupuntura" },
     { "@type": "MedicalProcedure", name: "Implanon" },
-    { "@type": "MedicalTherapy", name: "Protocolo de Emagrecimento" },
     { "@type": "MedicalProcedure", name: "Atendimento Médico Domiciliar" },
   ],
   aggregateRating: {

@@ -16,7 +16,6 @@ export const WHATSAPP_MESSAGES = {
   consultaClinica: "Olá! Gostaria de agendar uma Consulta Clínica com o Dr. Samir.",
   acupuntura: "Olá! Gostaria de agendar uma sessão de Acupuntura com o Dr. Samir.",
   implanon: "Olá! Gostaria de agendar a aplicação do Implanon com o Dr. Samir.",
-  emagrecimento: "Olá! Gostaria de saber mais sobre o Protocolo de Emagrecimento.",
   domiciliar: "Olá! Gostaria de saber mais sobre o Atendimento Médico Domiciliar.",
 } as const;
 
@@ -45,7 +44,7 @@ export const SERVICES: Service[] = [
     title: "Consulta Clínica",
     description:
       "Avaliação médica completa, com tempo dedicado ao diagnóstico preciso e à orientação clara. Um cuidado que acompanha o paciente além do consultório.",
-    image: "/images/service-consulta-clinica.jpg",
+    image: "/images/service-consulta-clinica.png",
     whatsappMessage: WHATSAPP_MESSAGES.consultaClinica,
   },
   {
@@ -58,19 +57,11 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "implanon",
-    title: "Implanon",
+    title: "Implante Contraceptivo Implanon",
     description:
-      "Método contraceptivo de longa duração, seguro e eficaz, aplicado e acompanhado com todo o rigor médico necessário.",
-    image: "/images/service-implanon.jpg",
+      "Método contraceptivo de longa duração, seguro e eficaz, aplicado e acompanhado com todo o rigor médico necessário. Um procedimento simples, realizado com anestesia local: o implante é inserido sob a pele do braço por um aplicador próprio, sem incisão cirúrgica e sem pontos.",
+    image: "/images/service-implanon.png",
     whatsappMessage: WHATSAPP_MESSAGES.implanon,
-  },
-  {
-    slug: "protocolo-emagrecimento",
-    title: "Protocolo de Emagrecimento",
-    description:
-      "Acompanhamento médico voltado à saúde metabólica, com foco em resultados reais e sustentáveis. Sem modismos, sem promessas vazias.",
-    image: "/images/service-emagrecimento.jpg",
-    whatsappMessage: WHATSAPP_MESSAGES.emagrecimento,
   },
   {
     slug: "atendimento-domiciliar",

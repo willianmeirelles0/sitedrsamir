@@ -47,7 +47,7 @@ export default function Bio() {
           </ul>
 
           <p className="mt-4 font-body text-base text-verde-escuro/80 sm:text-lg">
-            A consulta acontece de forma online, mas com a mesma seriedade e
+            A consulta acontece de forma online e presencial, mas com a mesma seriedade e
             proximidade de um atendimento presencial: escuta humana,
             diagnóstico bem explicado e segurança em cada conduta.
           </p>
