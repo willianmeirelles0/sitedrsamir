@@ -6,14 +6,14 @@ import type { Service } from "@/lib/site";
 export default function ServiceCard({ service }: { service: Service }) {
   return (
     <Card>
-      <div className="relative aspect-[4/3] w-full">
+      <div className="relative aspect-[4/3] w-full bg-bege">
         <Image
           src={service.image}
           alt={service.title}
           fill
           loading="lazy"
           sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
-          className="object-cover"
+          className={service.imageFit === "contain" ? "object-contain" : "object-cover"}
         />
       </div>
       <div className="flex flex-1 flex-col gap-4 p-6">

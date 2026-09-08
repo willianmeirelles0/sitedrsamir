@@ -35,6 +35,8 @@ export type Service = {
   title: string;
   description: string;
   image: string;
+  /** "cover" (padrão) recorta a imagem para preencher o card; "contain" mostra a imagem inteira, sem cortar. */
+  imageFit?: "cover" | "contain";
   whatsappMessage: string;
 };
 
@@ -45,6 +47,7 @@ export const SERVICES: Service[] = [
     description:
       "Avaliação médica completa, com tempo dedicado ao diagnóstico preciso e à orientação clara. Um cuidado que acompanha o paciente além do consultório.",
     image: "/images/service-consulta-clinica.png",
+    imageFit: "contain",
     whatsappMessage: WHATSAPP_MESSAGES.consultaClinica,
   },
   {
