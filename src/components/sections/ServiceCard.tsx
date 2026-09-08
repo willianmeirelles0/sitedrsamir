@@ -13,7 +13,7 @@ export default function ServiceCard({ service }: { service: Service }) {
           fill
           loading="lazy"
           sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
-          className={service.imageFit === "contain" ? "object-contain" : "object-cover"}
+          className="object-cover"
         />
       </div>
       <div className="flex flex-1 flex-col gap-4 p-6">
